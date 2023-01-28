@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { products } from '../products';
 
 @Component({
   selector: 'app-products',
@@ -7,11 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
-  products = [
-    {name: 'product 1'},
-    {name: 'product 2'},
-    {name: 'product 3'}
-  ];
+  products =products;
 
   constructor(
     private router: Router,
