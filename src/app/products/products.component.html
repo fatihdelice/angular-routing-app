@@ -1,1 +1,8 @@
-<p>products works!</p>
+<ul class="list-group">
+    <li *ngFor="let p of products" class="list-group-item">
+        {{p.name}}
+    </li>
+</ul>
+<p>
+    <button (click)="loadProducts()" class="btn btn-primary">Refresh the Page</button>
+</p>
