@@ -9,15 +9,25 @@ import { UsersComponent } from './users/users.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ProductComponent } from './products/product/product.component';
+import { UserComponent } from './users/user/user.component';
+import { EditProductsComponent } from './products/edit-products/edit-products.component';
 
 
-const appRoutes: Routes=[
-  {path: '', component: HomeComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'products', component: ProductsComponent},
-  {path: 'products/:id', component: ProductComponent},
-  {path: 'users', component: UsersComponent},
-  {path: '**', component: NotfoundComponent},
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  {
+    path: 'products', component: ProductsComponent, children: [
+      { path: ':id', component: ProductComponent },
+      { path: ':id/edit', component: EditProductsComponent }
+    ]
+  },
+  {
+    path: 'users', component: UsersComponent, children: [
+      { path: ':name', component: UserComponent }
+    ]
+  },
+  { path: '**', component: NotfoundComponent },
 ];
 
 // localhost:4200/products?page=2&order=newest
@@ -31,7 +41,9 @@ const appRoutes: Routes=[
     UsersComponent,
     CategoriesComponent,
     NotfoundComponent,
-    ProductComponent
+    ProductComponent,
+    UserComponent,
+    EditProductsComponent
   ],
   imports: [
     BrowserModule,
