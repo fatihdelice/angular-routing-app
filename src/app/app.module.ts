@@ -20,6 +20,9 @@ const appRoutes: Routes=[
   {path: '**', component: NotfoundComponent},
 ];
 
+// localhost:4200/products?page=2&order=newest
+// query params
+
 @NgModule({
   declarations: [
     AppComponent,
