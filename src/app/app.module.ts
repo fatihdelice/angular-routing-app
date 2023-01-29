@@ -12,6 +12,7 @@ import { ProductComponent } from './products/product/product.component';
 import { UserComponent } from './users/user/user.component';
 import { EditProductsComponent } from './products/edit-products/edit-products.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AdminModule } from './admin/admin.module';
 
 
 
@@ -33,6 +34,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
+    AdminModule,
     AppRoutingModule
   ],
   providers: [],
